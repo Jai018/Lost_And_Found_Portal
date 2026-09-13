@@ -25,7 +25,7 @@ type Form = z.infer<typeof schema>;
 const ResetPassword: React.FC = () => {
   const [searchParams]   = useSearchParams();
   const navigate          = useNavigate();
-  const { login }         = useAuthStore();
+  const { setAuth }       = useAuthStore();
   const [success, setSuccess] = React.useState(false);
   const [showPass, setShowPass]     = React.useState(false);
   const [showConfirm, setShowConfirm] = React.useState(false);
@@ -62,7 +62,7 @@ const ResetPassword: React.FC = () => {
     try {
       const res = await authApi.resetPassword(token, data.password);
       const { user, token: authToken } = res.data.data;
-      login(user, authToken);
+      setAuth(user, authToken);
       setSuccess(true);
       setTimeout(() => navigate('/dashboard'), 2500);
     } catch (err: unknown) {

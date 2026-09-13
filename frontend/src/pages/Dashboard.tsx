@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import {
   Plus, Package, CheckCircle, CheckCircle2, Clock,
-  AlertCircle, Search, ChevronRight, FileText,
+  Search, ChevronRight, FileText,
   Eye, XCircle
 } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
