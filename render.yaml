@@ -1,7 +1,0 @@
-services:
-  - type: web
-    name: Lost_And_Found_Portal-2
-    runtime: node
-    rootDir: backend
-    buildCommand: npm install && npm run build
-    startCommand: npm start
