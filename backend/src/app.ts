@@ -22,6 +22,9 @@ import reportRoutes       from './routes/reports';
 
 const app = express();
 
+// Trust Render/proxy X-Forwarded-For headers (required for express-rate-limit)
+app.set('trust proxy', 1);
+
 // ── Security & Middleware ─────────────────────────────────────────────────
 app.use(helmet({ crossOriginEmbedderPolicy: false }));
 app.use(compression() as any);
